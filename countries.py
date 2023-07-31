@@ -21,10 +21,13 @@ with open(input_filename) as country_file:
 
 # print(countries)
 
-chosen_country = input('Please enter the name of a country: ').casefold()
+
 while True:
+    chosen_country = input('Please enter the name of a country: ').casefold()
     if chosen_country in countries:
         country_data = countries[chosen_country]
         print(f"The capital of {chosen_country} is {country_data['capital']}")
+    elif chosen_country not in countries:
+        print(f"There is no country in data set as {chosen_country}")
     elif chosen_country == 'quit':
         break
